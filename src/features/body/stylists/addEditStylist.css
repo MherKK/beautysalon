@@ -1,0 +1,74 @@
+.edit-add-styler-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(112, 112, 112, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-y: visible;
+    height: 100%;
+    z-index: 2;
+}
+
+.edit-styler-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 40px;
+    background-color: white;
+}
+
+.edit-styler-container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+
+.edit-styler-container>span:nth-of-type(1)>input {
+    font-family: 'karla';
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.edit-styler-container>div>:where(input, textarea) {
+    width: 300px;
+    height: 30px;
+    padding: 0;
+    padding-left: 5px;
+}
+
+.edit-styler-container>div>textarea {
+    resize: none;
+    padding-top: 10px;
+    height: 100px;
+
+}
+
+.edit-styler-container>span>button {
+    cursor: pointer;
+    background-color: transparent;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 5px;
+    width: 120px;
+}
+
+
+/*
+    Media Quories
+*/
+@media (min-height:700px) {
+    .edit-styler-container {
+        gap: 20px;
+    }
+}

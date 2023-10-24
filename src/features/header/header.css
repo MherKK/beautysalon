@@ -1,0 +1,144 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 2;
+}
+
+.logo-button>a {
+    font-size: 34px;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-family: 'karla', sans-serif;
+}
+
+.desktop-tab-links>ul>li>a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: 'Osworld', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+
+.nav-container li.active a {
+    color: rgb(216, 216, 216);
+    text-underline-offset: 8px;
+    text-decoration: underline;
+}
+
+.nav-container li>a:hover {
+    text-underline-offset: 8px;
+    text-decoration: underline;
+    text-decoration-color: rgb(212, 212, 212);
+    color: rgb(212, 212, 212);
+}
+
+
+
+.nav-tab-btn {
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.nav-tab-btn>img {
+    width: 30px;
+}
+
+.nav-container>div>ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+
+}
+
+.nav-tab-btn {
+    display: none;
+}
+
+.desktop-tab-links>li {
+    list-style: none;
+}
+
+
+@media (max-width: 900px) {
+
+    .nav-tab-btn {
+        display: block;
+    }
+
+    .logo-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .desktop-tab-links {
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        width: 100%;
+        height: 100vh;
+        transition: 0.7s ease-in-out all;
+
+    }
+
+    .two {
+        background-color: transparent;
+        transition: 0.2s ease-in-out all;
+    }
+
+    .desktop-tab-links>ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: black;
+        width: 230px;
+        height: 100vh;
+    }
+
+    .desktop-tab-links.active {
+        left: 0;
+    }
+
+    .active2 {
+        left: 0;
+        transition: 0.4s all;
+        background: rgba(112, 112, 112, 0.9);
+    }
+
+    .desktop-tab-links>ul>li {
+        width: 100%;
+    }
+
+    .desktop-tab-links>ul>li>a {
+        font-size: 20px;
+        width: 100%;
+    }
+
+
+    .nav-container>div>ul {
+        margin: 0;
+        padding: 40px 0 0 20px;
+    }
+
+    body {
+        overflow-y: visible;
+    }
+}
+
+@media (min-width:900px) {
+    .nav-container {
+        justify-content: space-evenly;
+    }
+}

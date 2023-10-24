@@ -1,0 +1,116 @@
+.our-team-container {
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.our-team-container>p {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: -2px;
+}
+
+.our-team-container>div {
+    width: 300px;
+}
+
+.member-container {
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.member-container>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-container>div:nth-of-type(1) {
+    border-radius: 25px 25px 0 25px;
+    height: 350px;
+
+}
+
+
+
+
+.member-container>div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    height: 220px;
+    border-radius: 25px;
+}
+
+.member-container>div>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.member-container>div>h3 {
+    font-size: 22px;
+    margin: 0px;
+    color: black;
+    font-family: 'karla', sans-serif;
+}
+
+.member-container>div>h5 {
+    font-size: 13px;
+    line-height: 0px;
+    margin-top: 10px;
+    color: black;
+    font-family: 'karla', sans-serif;
+}
+
+.member-container>div>a {
+    color: black;
+    font-family: 'Karla', sans-serif;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 130px;
+}
+
+.member-container>div>a:hover {
+    background-color: black;
+    color: white;
+}
+
+.our-team-container>a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: white;
+    font-family: 'karla', sans-serif;
+
+}
+
+.our-team-container>a:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (min-width:630px) {
+    .our-team-container>div {
+        width: 600px;
+    }
+}
+
+@media (min-width:1030px) {
+    .our-team-container>div {
+        width: 1000px;
+    }
+}

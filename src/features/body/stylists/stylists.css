@@ -1,0 +1,136 @@
+/*
+    stylists container design
+*/
+
+.stylists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'karla', sans-serif;
+    margin-bottom: 40px;
+}
+
+.stylists-container>p {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.stylists-container>div>select {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    font-family: 'karla';
+}
+
+.stylists-container option {
+    width: 200px;
+    border-radius: 0px;
+    border: 1px solid red;
+}
+
+.stylists-container_members {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*
+    Add styler
+*/
+
+.add-filter_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.add-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid black;
+    width: fit-content;
+    font-family: 'karla';
+    letter-spacing: 1px;
+}
+
+
+/*
+    styler's design
+*/
+
+.each-member-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.each-member-container>div>div>img {
+    width: 150px;
+    height: 150px;
+}
+
+
+
+.each-member-container>div>div>a {
+    color: black;
+    text-underline-offset: 10px;
+}
+
+.each-member-container>div>div>a:hover {
+    text-decoration-color: rgb(86, 86, 86);
+    color: rgb(133, 133, 133);
+}
+
+
+
+
+/*
+    styler's edit design
+*/
+
+.edit-button {
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
+@media (min-width:500px) {
+    .each-member-container>div>div>img {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media (min-width:800px) {
+    .each-member-container>div>div>img {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+@media (min-width:1000px) {
+
+    .each-member-container>div>div>img {
+        width: 270px;
+        height: 350px;
+    }
+
+    .edit-styler-container {
+        width: 70%;
+    }
+
+    .stylists-container_members {
+        width: 900px;
+    }
+}
