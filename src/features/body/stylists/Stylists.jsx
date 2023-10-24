@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import "./Stylists.css"
+import "./stylists.css"
 import { ourTeamList } from "../home/ourteam/OurTeamSlice"
 import { useState } from "react";
 import { useEffect } from "react";
