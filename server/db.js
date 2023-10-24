@@ -58,7 +58,7 @@ app.post('/stylists/update-stylist', (req, res) => {
 
 
 
-app.listen(3306, () => {
+app.listen(5000, () => {
     console.log("listening");
 })
 
