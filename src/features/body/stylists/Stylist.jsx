@@ -34,7 +34,7 @@ export default function Stylist() {
 
 export const stylistLoader = async ({ params }) => {
     const { id } = params;
-    let response = await axios.get("http://localhost:3000/stylists/" + id);
+    let response = await axios.get("http://localhost:3306/stylists/" + id);
     return response.data;
 
 }

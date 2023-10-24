@@ -15,6 +15,11 @@ const con = mysql.createConnection({
     database: "salon_db"
 })
 
+con.connect(function (err) {
+    if (err) throw err;
+    console.log("connected");
+})
+
 app.get('/', (req, res) => {
     let query = "SELECT * from salon_db.salon_stuff";
     con.query(query, (err, result) => {
@@ -53,7 +58,7 @@ app.post('/stylists/update-stylist', (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(3306, () => {
     console.log("listening");
 })
 

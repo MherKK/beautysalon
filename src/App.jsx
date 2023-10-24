@@ -31,7 +31,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/").then(res => {
+    axios.get("http://localhost:3306/").then(res => {
       dispatch(setInitialState({
         state: res.data
       }))

@@ -10,7 +10,7 @@ export const stylistSlice = createSlice({
             return state = action.payload.state
         },
         editStylist: (state, action) => {
-            axios.post("http://localhost:3000/stylists/update-stylist",
+            axios.post("http://localhost:3306/stylists/update-stylist",
                 {
                     styler: action.payload.styler
                 })
