@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "./db.js",
-            "use": "@vercel/start"
+            "use": "@vercel/npm start"
         }
     ],
     "routes": [
