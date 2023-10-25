@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //app.use(express.static('public'))
-
+module.exports = app
 
 const con = mysql.createPool({
     host: 'bbn0awf8kn61isubmbvq-mysql.services.clever-cloud.com',
