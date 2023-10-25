@@ -11,6 +11,8 @@ import Contact from './features/body/contact/Contact'
 import Home from './features/body/home/Home.jsx'
 import Stylists from './features/body/stylists/Stylists'
 import RootLayout from './RootLayout'
+import { useState } from 'react';
+import { dataRef } from './firebase';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,14 +31,22 @@ const router = createBrowserRouter(
 function App() {
   const dispatch = useDispatch();
 
+  const [fire, setFire] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:5000/").then(res => {
+
+    })
+
+    dataRef.ref().child('Stylers').on('value', data => {
+      const getData = Object.values(data.val());
       dispatch(setInitialState({
-        state: res.data
+        state: getData
       }))
     })
   }, [])
+
+  console.log(fire);
 
   return (
     <>
