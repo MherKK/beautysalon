@@ -1,37 +1,24 @@
 import { useDispatch } from "react-redux";
+import { editStylist } from "../home/ourteam/OurTeamSlice";
 import "./addEditStylist.css"
-import { useState } from "react";
-import { addStylist } from "../home/ourteam/OurTeamSlice";
-
-export default function AddStylist({ display, setDisplay }) {
-
+export default function EditStylist({ display, setStyler, styler, team, setTeam, setDisplay, member }) {
     const dispatch = useDispatch();
-    const stylerInfo = {
-        name: '',
-        lastName: '',
-        role: 'Hair Colorist',
-        image: '',
-        smallDescription: '',
-        Description: ''
-    }
-    const [error, setError] = useState(false);
-    const [styler, setStyler] = useState(stylerInfo);
-
     return (
         <div className="edit-add-styler-container">
             <div className="edit-styler-container">
                 <button className="cancel-edit_button" onClick={() => {
                     setDisplay(!display);
-                    setStyler(stylerInfo)
+                    document.body.style.overflowY = "visible"
+                    setStyler(member)
                 }
                 }>Cancel</button>
                 <div id="edit-top_part">
                     <div className="parent">
-                        <label>Name:</label>
+                        <label>Edit Name:</label>
                         <input className="child" type="text" value={styler.name} onChange={(e) => setStyler({ ...styler, name: e.target.value })} />
                     </div>
                     <div>
-                        <label>Last Name:</label>
+                        <label>Edit Last Name:</label>
                         <input value={styler.lastName} onChange={(e) => setStyler({ ...styler, lastName: e.target.value })} type="text" />
                     </div>
                     <div>
@@ -47,17 +34,17 @@ export default function AddStylist({ display, setDisplay }) {
                 </div>
 
                 <div>
-                    <label>Small Description</label>
+                    <label>Edit Small Description</label>
                     <textarea maxLength={170} value={styler.smallDescription} onChange={(e) => setStyler({ ...styler, smallDescription: e.target.value })} />
                 </div>
 
                 <div>
-                    <label>Big Description</label>
+                    <label>Edit Big Description</label>
                     <textarea value={styler.Description} onChange={(e) => setStyler({ ...styler, Description: e.target.value })} />
                 </div>
 
                 <span>
-                    <label>Image:</label>
+                    <label>Change Image:</label>
                     <input type="file" onChange={(e) => {
 
                         let reader = new FileReader();
@@ -71,19 +58,20 @@ export default function AddStylist({ display, setDisplay }) {
 
                 <span>
                     <button onClick={() => {
+                        setDisplay(!display)
+                        dispatch(editStylist({
+                            id: member.id,
+                            styler: styler
+                        }))
 
-                        if (styler.name && styler.lastName && styler.Description && styler.image && styler.role && styler.smallDescription !== '') {
-                            setDisplay(!display)
-                            dispatch(addStylist({
-                                styler: styler
-                            }))
-                        } else {
-                            setError(true)
-                        }
-                    }}>Add Styler</button>
+                    }}>Update Styler</button>
+                    <button onClick={() => {
+                        setTeam(team.filter(id => id.id !== member.id))
+                        setDisplay(!display)
 
+                    }}>Delete Styler</button>
                 </span>
-                {error === false ? ' ' : <p style={{ color: 'red' }}>All the fields are required</p>}
+
             </div>
         </div>
     )

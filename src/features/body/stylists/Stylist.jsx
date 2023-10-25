@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Stylists from "./Stylists";
-import { dataRef } from "../../../firebase";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { ourTeamList } from "../home/ourteam/OurTeamSlice";
@@ -8,19 +7,20 @@ import "../services/services.css";
 
 export default function Stylist() {
     const ourTeam = useSelector(ourTeamList);
-    const { id } = useParams();
+    const { name } = useParams();
     const [stylerInfo, setStylerInfo] = useState({});
-
+    let fullName = name.split('-');
+    console.log(name);
     useEffect(() => {
 
-        ourTeam.map(data => {
-            if (data.id == id) {
-                setStylerInfo(ourTeam[0])
+        ourTeam.filter(data => {
+            if (data.name + data.lastName == fullName.join('')) {
+                console.log(data);
+                return setStylerInfo(data)
             }
         })
 
-    }, [])
-    console.log(stylerInfo);
+    }, [ourTeam, stylerInfo, setStylerInfo])
     return (
         <div>
             <div className="service-container">

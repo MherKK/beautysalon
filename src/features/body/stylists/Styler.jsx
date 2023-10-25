@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import AddStylist from "./AddStylist";
+import EditStylist from "./EditStylist";
 
 export default function Styler({ member, team, setTeam, user }) {
 
@@ -11,8 +11,8 @@ export default function Styler({ member, team, setTeam, user }) {
         lastName: member.lastName,
         role: member.role,
         image: member.image,
-        smallDesc: member.smallDesc,
-        description: member.description
+        smallDescription: member.smallDescription,
+        Description: member.Description
     }
     const [styler, setStyler] = useState(stylerInfo);
 
@@ -24,7 +24,6 @@ export default function Styler({ member, team, setTeam, user }) {
                     className="edit-button"
                     onClick={(e) => {
                         setDisplay(!display)
-
                     }}
                 >Edit Styler
                 </button>
@@ -43,21 +42,22 @@ export default function Styler({ member, team, setTeam, user }) {
                         document.body.scrollTop = 0
                         document.documentElement.scrollTop = 0
                     }}
-                        to={`/stylists/` + member.id}
+                        to={`/stylists/` + member.name + '-' + member.lastName}
                     >About {member.name}
                     </Link>
                 </div>
             </div>
 
-            {display === true && <AddStylist
-                display={display}
-                setStyler={setStyler}
-                styler={styler}
-                team={team}
-                setTeam={setTeam}
-                setDisplay={setDisplay}
-                member={member}
-            />}
+            {display === true &&
+                <EditStylist
+                    display={display}
+                    setStyler={setStyler}
+                    styler={styler}
+                    team={team}
+                    setTeam={setTeam}
+                    setDisplay={setDisplay}
+                    member={member}
+                />}
 
         </div >
     )

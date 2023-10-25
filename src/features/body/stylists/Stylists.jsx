@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Styler from "./Styler";
 import "./stylists.css"
+import AddStylist from "./AddStylist";
 
 export default function Stylists() {
 
@@ -26,7 +27,7 @@ export default function Stylists() {
                         className="add-button"
                         onClick={(e) => {
                             setDisplay(!display)
-                            document.body.style.overflowY = "hidden"
+
                         }}
                     >Add Styler
                     </button>
@@ -45,7 +46,7 @@ export default function Stylists() {
             <div className="stylists-container_members">
                 {team.map((member) => {
                     return (
-                        <Styler key={member.id}
+                        <Styler key={member.name}
                             member={member}
                             team={team}
                             setTeam={setTeam}
@@ -54,6 +55,12 @@ export default function Stylists() {
                     )
                 })}
             </div>
+
+            {display === true &&
+                <AddStylist
+                    display={display}
+                    setDisplay={setDisplay}
+                />}
         </div >
     )
 }
