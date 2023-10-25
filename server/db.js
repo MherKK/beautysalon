@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require("cors");
+require('dotenv').config();
 const bodyParser = require("body-parser")
 const mysql = require('mysql');
 const app = express();
@@ -8,20 +9,21 @@ app.use(cors());
 
 //app.use(express.static('public'))
 
-const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Keziinch1@",
-    database: "salon_db"
+
+const con = mysql.createPool({
+    host: 'bbn0awf8kn61isubmbvq-mysql.services.clever-cloud.com',
+    user: 'uoqniw0ichxuhefj',
+    password: 'TD06iBReFfOHHSsX5TCG',
+    database: 'bbn0awf8kn61isubmbvq',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 })
 
-con.connect(function (err) {
-    if (err) throw err;
-    console.log("connected");
-})
+
 
 app.get('/', (req, res) => {
-    let query = "SELECT * from salon_db.salon_stuff";
+    let query = "SELECT * from salon_db";
     con.query(query, (err, result) => {
         if (err) {
             console.log(err);
@@ -34,7 +36,7 @@ app.get('/', (req, res) => {
 
 app.get("/stylists/:id", (req, res) => {
     let id = req.params.id;
-    let query = "SELECT * from salon_db.salon_stuff where id=?";
+    let query = "SELECT * from salon_db where id=?";
     con.query(query, [id], (err, result) => {
         if (err) {
             console.log(err);
@@ -48,7 +50,7 @@ app.get("/stylists/:id", (req, res) => {
 
 app.post('/stylists/update-stylist', (req, res) => {
     let styler = req.body.styler;
-    let query = "UPDATE salon_db.salon_stuff SET name=?, lastName=?, role=?, image=?,smallDesc=? , description=?  where id=?";
+    let query = "UPDATE salon_db SET name=?, lastName=?, role=?, image=?,smallDesc=? , description=?  where id=?";
     con.query(query, [styler.name, styler.lastName, styler.role, styler.image, styler.smallDesc, styler.description, styler.id], (err, result) => {
         if (err) return console.log(err);
         return console.log(result);;
@@ -81,7 +83,7 @@ app.listen(5000, () => {
 
 // app.post('/image', (req, res) => {
 //     let { base64 } = req.body;
-//     let query = `UPDATE salon_db.salon_stuff SET image=? where id=6`;
+//     let query = `UPDATE salon_db SET image=? where id=6`;
 //     con.query(query, [base64], (err, result) => {
 //         if (err) return console.log(err);
 //         console.log(result);
