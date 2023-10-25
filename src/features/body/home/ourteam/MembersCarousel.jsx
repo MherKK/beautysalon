@@ -56,7 +56,7 @@ export default function MembersCarousel({ ourTeam }) {
                                 <Link onClick={() => {
                                     document.body.scrollTop = 0
                                     document.documentElement.scrollTop = 0
-                                }} to={'/stylists/' + member.id}>{'About ' + member.name}</Link>
+                                }} to={'/stylists/' + member.name + '-' + member.lastName}>{'About ' + member.name}</Link>
                             </div>
                         </div>
                     </SwiperSlide>)
