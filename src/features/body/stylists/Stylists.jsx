@@ -27,7 +27,6 @@ export default function Stylists() {
                         className="add-button"
                         onClick={(e) => {
                             setDisplay(!display)
-
                         }}
                     >Add Styler
                     </button>
