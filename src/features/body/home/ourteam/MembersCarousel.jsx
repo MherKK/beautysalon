@@ -2,9 +2,7 @@
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
-
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -54,7 +52,7 @@ export default function MembersCarousel({ ourTeam }) {
                             <div>
                                 <h3>{member.name} {member.lastName}</h3>
 
-                                <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDesc}</p>
+                                <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDescription}</p>
                                 <Link onClick={() => {
                                     document.body.scrollTop = 0
                                     document.documentElement.scrollTop = 0

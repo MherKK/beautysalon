@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux"
-import "./ourteam.css"
 import { ourTeamList } from "./OurTeamSlice";
-
 import MembersCarousel from "./MembersCarousel";
 import { Link } from "react-router-dom";
+import "./ourteam.css"
 
 export default function OurTeam() {
     const ourTeam = useSelector(ourTeamList)

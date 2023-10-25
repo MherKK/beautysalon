@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios"
 
 
 export const stylistSlice = createSlice({
@@ -10,10 +9,7 @@ export const stylistSlice = createSlice({
             return state = action.payload.state
         },
         editStylist: (state, action) => {
-            axios.post("http://localhost:5000/stylists/update-stylist",
-                {
-                    styler: action.payload.styler
-                })
+
             return state.map((styler) => {
                 if (styler.id === action.payload.id) {
                     return action.payload.styler;

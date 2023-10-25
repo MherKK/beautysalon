@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux"
-import "./stylists.css"
 import { ourTeamList } from "../home/ourteam/OurTeamSlice"
 import { useState } from "react";
 import { useEffect } from "react";
 import Styler from "./Styler";
+import "./stylists.css"
 
 export default function Stylists() {
 

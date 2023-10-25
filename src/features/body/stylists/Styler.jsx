@@ -1,15 +1,10 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
 import AddStylist from "./AddStylist";
 
-
-
 export default function Styler({ member, team, setTeam, user }) {
+
     const [display, setDisplay] = useState(false);
-
-
-
     const stylerInfo = {
         id: member.id,
         name: member.name,
@@ -19,9 +14,8 @@ export default function Styler({ member, team, setTeam, user }) {
         smallDesc: member.smallDesc,
         description: member.description
     }
-
-
     const [styler, setStyler] = useState(stylerInfo);
+
     return (
         <div className="each-member-container" key={member.id}>
 
