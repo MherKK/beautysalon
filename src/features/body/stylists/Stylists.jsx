@@ -31,7 +31,7 @@ export default function Stylists() {
                     >Add Styler
                     </button>
                 }
-                <select onClick={(e) => {
+                <select onChange={(e) => {
                     setTeam(ourTeam.filter((styler) => e.target.value === '' ? styler : styler.role === e.target.value))
                 }}>
                     <option value=''>All Stylers</option>
