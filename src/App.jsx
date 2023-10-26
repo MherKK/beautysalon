@@ -7,6 +7,7 @@ import Contact from './features/body/contact/Contact'
 import Home from './features/body/home/Home.jsx'
 import Stylists from './features/body/stylists/Stylists'
 import RootLayout from './RootLayout'
+import Appointments from './features/body/appointment/Appointments'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +18,7 @@ const router = createBrowserRouter(
       <Route path='/services' element={<Services />} />
       <Route path='/products' element={<Products />} />
       <Route path='/contact' element={<Contact />} />
-
+      <Route path='/appointments' element={<Appointments />} />
     </Route>
   )
 )

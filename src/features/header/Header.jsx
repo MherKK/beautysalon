@@ -43,7 +43,7 @@ export default function Header() {
                     <CustomLink to="/stylists">Stylists</CustomLink>
                     <CustomLink to="/services">Services</CustomLink>
                     <CustomLink to="/products">Products</CustomLink>
-                    <CustomLink to="/appointment">Book Appointment</CustomLink>
+                    <CustomLink to="/appointments">Appointments</CustomLink>
                     <CustomLink to='/contact'>Contact</CustomLink>
                 </ul>
             </div>
