@@ -22,10 +22,10 @@ export default function MembersCarousel() {
 
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}
-            autoplay={{
-                delay: 4000,
-                disableOnInteraction: false
-            }}
+            // autoplay={{
+            //     delay: 4000,
+            //     disableOnInteraction: false
+            // }}
             navigation
             breakpoints={{
                 0: {
@@ -54,8 +54,8 @@ export default function MembersCarousel() {
 
                             <div>
                                 <h3>{member.name} {member.lastName}</h3>
-
-                                <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDescription}</p>
+                                <p>{member.role}</p>
+                                {/* <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDescription}</p> */}
                                 <Link onClick={() => {
                                     document.body.scrollTop = 0
                                     document.documentElement.scrollTop = 0
