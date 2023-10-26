@@ -19,7 +19,7 @@ export default function Stylists() {
 
     return (
         <div className="stylists-container">
-            <p>Our Advanced Team of Stylists and Colorists and More</p>
+            <p>Our Advanced Team of Stylists, Colorists and More</p>
             <div className="add-filter_container">
 
                 <select onChange={(e) => {
