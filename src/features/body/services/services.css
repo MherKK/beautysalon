@@ -16,6 +16,12 @@
     width: 100%;
 }
 
+.services-details {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555555;
+    font-family: 'Karla', sans-serif;
+}
 
 
 .styling>div>div>h5 {
