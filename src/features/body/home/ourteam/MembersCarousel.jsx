@@ -54,7 +54,7 @@ export default function MembersCarousel() {
                             <div>
                                 <h3>{member.name} {member.lastName}</h3>
                                 <p>{member.role}</p>
-                                <p style={{ marginTop: 0 }}>{member.description.slice(0, 130)}... <Link onClick={() => {
+                                <p style={{ marginTop: 0 }}>{member.description.slice(0, 150)}... <Link onClick={() => {
                                     document.body.scrollTop = 0
                                     document.documentElement.scrollTop = 0
                                 }} to={'/stylists/' + member.name + '-' + member.lastName}>{' More About ' + member.name}</Link></p>

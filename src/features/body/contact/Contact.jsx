@@ -30,6 +30,13 @@ export default function Contact() {
                         <label >Message:</label>
                         <textarea placeholder="How Can We Help You?" />
                     </div>
+                    <button
+                        style={{
+                            backgroundColor: "transparent", height: '30px', border: '1px solid black',
+                            cursor: 'pointer'
+                        }}
+
+                    >Submit</button>
                 </div>
 
                 <div className="other-contacts">
