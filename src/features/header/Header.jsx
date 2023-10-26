@@ -6,13 +6,14 @@ export default function Header() {
 
     const [showTab, setShowTab] = useState(false);
     const ulRef = useRef("");
+    const ref = useRef("");
     useEffect(() => {
         let hadnler = (e) => {
             if (ulRef.current.contains(e.target)) {
                 setShowTab(false)
             }
         }
-        document.addEventListener("mousedown", hadnler)
+        document.addEventListener("click", hadnler)
         return () => {
             document.removeEventListener("mousedown", hadnler);
         }
@@ -38,7 +39,7 @@ export default function Header() {
                 ref={ulRef}
                 className={showTab === false ? "desktop-tab-links two" : "desktop-tab-links active2"}
             >
-                <ul className={showTab === false ? "desktop-tab-links" : "desktop-tab-links active"}>
+                <ul ref={ref} className={showTab === false ? "desktop-tab-links" : "desktop-tab-links active"}>
                     <CustomLink to="/">Home</CustomLink>
                     <CustomLink to="/stylists">Stylists</CustomLink>
                     <CustomLink to="/services">Services</CustomLink>

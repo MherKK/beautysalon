@@ -1,7 +1,7 @@
 import homeImage from "../../../assets/home-image.png"
 import AboutSalon from "./aboutsalon/AboutSalon"
 import "./home.css"
-import OurTeam from "./ourteam/OurTeam"
+import OurTeam from "./ourteam/OurTeam.jsx"
 import OnlinePlatforms from "./platforms/OnlinePlatforms"
 
 export default function Home() {

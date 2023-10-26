@@ -11,7 +11,7 @@ export default function Contact() {
                     <h3>Through Email:</h3>
                     <div>
                         <div>
-                            <label>Full Name:</label>
+                            <label >Full Name:</label>
                             <input placeholder="Full Name" type="text" />
                         </div>
 
@@ -22,12 +22,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                        <label>Subject:</label>
+                        <label >Subject:</label>
                         <input placeholder="Subject" type="text" />
                     </div>
 
                     <div>
-                        <label>Message:</label>
+                        <label >Message:</label>
                         <textarea placeholder="How Can We Help You?" />
                     </div>
                 </div>

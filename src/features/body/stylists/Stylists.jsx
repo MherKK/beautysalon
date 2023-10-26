@@ -4,13 +4,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Styler from "./Styler";
 import "./stylists.css"
-import AddStylist from "./AddStylist";
+
 
 export default function Stylists() {
 
     let user = 'admin';
     const ourTeam = useSelector(ourTeamList);
-    const [display, setDisplay] = useState(false);
     let [team, setTeam] = useState(ourTeam);
 
 
@@ -22,15 +21,7 @@ export default function Stylists() {
         <div className="stylists-container">
             <p>Our Advanced Team of Stylists and Colorists and More</p>
             <div className="add-filter_container">
-                {user === 'admin' && window.location.pathname == '/stylists' &&
-                    <button
-                        className="add-button"
-                        onClick={(e) => {
-                            setDisplay(!display)
-                        }}
-                    >Add Styler
-                    </button>
-                }
+
                 <select onChange={(e) => {
                     setTeam(ourTeam.filter((styler) => e.target.value === '' ? styler : styler.role === e.target.value))
                 }}>
@@ -40,8 +31,6 @@ export default function Stylists() {
                     <option value="Make Up">Make Up</option>
                 </select>
             </div>
-
-
             <div className="stylists-container_members">
                 {team.map((member) => {
                     return (
@@ -54,12 +43,17 @@ export default function Stylists() {
                     )
                 })}
             </div>
-
-            {display === true &&
-                <AddStylist
-                    display={display}
-                    setDisplay={setDisplay}
-                />}
         </div >
     )
+}
+
+{/* {user === 'admin' && window.location.pathname == '/stylists' &&
+                    <button
+                        className="add-button"
+                        onClick={(e) => {
+                            setDisplay(!display)
+                        }}
+                    >Add Styler
+                    </button>
+                } */
 }

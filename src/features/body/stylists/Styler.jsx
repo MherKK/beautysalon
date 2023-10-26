@@ -1,35 +1,13 @@
-import { useState } from "react";
+//import { useState } from "react";
+//import EditStylist from "./EditStylist";
 import { Link } from "react-router-dom";
-import EditStylist from "./EditStylist";
 
-export default function Styler({ member, team, setTeam, user }) {
 
-    const [display, setDisplay] = useState(false);
-    const stylerInfo = {
-        id: member.id,
-        name: member.name,
-        lastName: member.lastName,
-        role: member.role,
-        image: member.image,
-        smallDescription: member.smallDescription,
-        Description: member.Description
-    }
-    const [styler, setStyler] = useState(stylerInfo);
+
+export default function Styler({ member }) {
 
     return (
         <div className="each-member-container" key={member.id}>
-
-            {user === 'admin' && window.location.pathname == '/stylists' &&
-                <button
-                    className="edit-button"
-                    onClick={(e) => {
-                        setDisplay(!display)
-                    }}
-                >Edit Styler
-                </button>
-            }
-
-
             <div>
                 <div>
                     <img src={member.image} />
@@ -47,8 +25,35 @@ export default function Styler({ member, team, setTeam, user }) {
                     </Link>
                 </div>
             </div>
+        </div >
+    )
+}
 
-            {display === true &&
+
+//const [display, setDisplay] = useState(false);
+// const stylerInfo = {
+//     name: member.name,
+//     lastName: member.lastName,
+//     role: member.role,
+//     image: member.image,
+//     smallDescription: member.smallDescription,
+//     Description: member.Description
+// }
+// const [styler, setStyler] = useState(stylerInfo);
+
+
+{/* {user === 'admin' && window.location.pathname == '/stylists' &&
+                <button
+                    className="edit-button"
+                    onClick={(e) => {
+                        setDisplay(!display)
+                    }}
+                >Edit Styler
+                </button>
+            } */
+}
+
+{/* {display === true &&
                 <EditStylist
                     display={display}
                     setStyler={setStyler}
@@ -57,8 +62,5 @@ export default function Styler({ member, team, setTeam, user }) {
                     setTeam={setTeam}
                     setDisplay={setDisplay}
                     member={member}
-                />}
-
-        </div >
-    )
+                />} */
 }

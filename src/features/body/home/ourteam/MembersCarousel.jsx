@@ -2,12 +2,15 @@
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useSelector } from "react-redux"
+import { ourTeamList } from "./OurTeamSlice";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-export default function MembersCarousel({ ourTeam }) {
+export default function MembersCarousel() {
+    const ourTeam = useSelector(ourTeamList)
 
     return (
 

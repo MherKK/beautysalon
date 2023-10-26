@@ -1,4 +1,4 @@
-.edit-add-styler-container {
+/* .edit-add-styler-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -78,9 +78,6 @@
     width: 120px;
 }
 
-/*
-    design for the cancel button
-*/
 
 .cancel-edit_button {
     width: 200px;
@@ -97,9 +94,7 @@
     color: white;
 }
 
-/*
-    Media Quories
-*/
+
 @media (min-height:700px) {
     .edit-styler-container {
         gap: 20px;
@@ -119,4 +114,4 @@
     #edit-top_part>div>:where(input, select) {
         width: 100%;
     }
-}
+} */

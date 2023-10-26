@@ -2,28 +2,36 @@ import { useParams } from "react-router-dom";
 import Stylists from "./Stylists";
 import { useEffect, useState } from "react";
 import "../services/services.css";
-import { dataRef } from "../../../firebase";
+import { useSelector } from "react-redux";
+import { ourTeamList } from "../home/ourteam/OurTeamSlice";
+
 
 
 export default function Stylist() {
+    const ourTeam = useSelector(ourTeamList);
     const { name } = useParams();
     const [stylerInfo, setStylerInfo] = useState({});
     let fullName = name.split('-');
-    console.log(fullName);
+
+
     useEffect(() => {
-        dataRef.ref('Stylers/' + fullName.join('')).on('value', (data) => {
-            return setStylerInfo(data.val());
-        })
-    }, [fullName[0]])
+        setStylerInfo(ourTeam.filter(styler => {
+            if (styler.name + styler.lastName === fullName.join('')) {
+                return styler
+            }
+        }))
+
+    }, [name])
+
     return (
         <div>
             <div className="service-container">
                 <div className="styling">
-                    <img className="stylist-image" src={stylerInfo.image} />
+                    <img className="stylist-image" src={stylerInfo[0].image} />
                     <div>
-                        <h1 style={{ margin: 0 }}>{stylerInfo.name} {stylerInfo.lastName}</h1>
-                        <h5 style={{ margin: 0 }}>{stylerInfo.role}</h5>
-                        <p>{stylerInfo.Description}</p>
+                        <h1 style={{ margin: 0 }}>{stylerInfo[0].name} {stylerInfo[0].lastName}</h1>
+                        <h5 style={{ margin: 0 }}>{stylerInfo[0].role}</h5>
+                        <p>{stylerInfo[0].description}</p>
                     </div>
                 </div>
             </div>
