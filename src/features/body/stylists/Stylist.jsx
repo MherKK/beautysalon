@@ -10,7 +10,13 @@ import { ourTeamList } from "../home/ourteam/OurTeamSlice";
 export default function Stylist() {
     const ourTeam = useSelector(ourTeamList);
     const { name } = useParams();
-    const [stylerInfo, setStylerInfo] = useState({});
+    const [stylerInfo, setStylerInfo] = useState([{
+        image: '',
+        name: '',
+        lastName: '',
+        role: '',
+        description: ''
+    }]);
     let fullName = name.split('-');
 
 
