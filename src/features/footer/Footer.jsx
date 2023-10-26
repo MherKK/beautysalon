@@ -17,7 +17,7 @@ export default function Footer() {
                     <div >
                         <p><a href="tel:+37495158155">(+374) 042 142-123</a></p>
                         <p><a href="mailto:salon@gmail.com">salon@gmail.com</a></p>
-                        <Link to="https://www.instagram.com">Or click here to book online</Link>
+                        <Link to="/appointments">click here to check the appointments</Link>
                     </div>
                 </div>
                 <div>

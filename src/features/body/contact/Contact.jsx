@@ -43,7 +43,7 @@ export default function Contact() {
                     <h3>Other Options:</h3>
                     <a href="tel:+37495158155">(+374) 042 142-123</a>
                     <a href="mailto:salon@gmail.com">salon@gmail.com</a>
-                    <Link to="https://www.instagram.com">Or click here to book online</Link>
+                    <Link to="/appointments">click here to see the appointments</Link>
 
                     <h3>Check us on google map</h3>
                     <iframe
