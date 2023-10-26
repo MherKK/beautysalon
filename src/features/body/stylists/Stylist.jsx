@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import Stylists from "./Stylists";
 import { useEffect, useState } from "react";
-import "../services/services.css";
 import { useSelector } from "react-redux";
 import { ourTeamList } from "../home/ourteam/OurTeamSlice";
-
+import "../services/services.css";
 
 
 export default function Stylist() {
@@ -18,6 +17,7 @@ export default function Stylist() {
         description: ''
     }]);
     let fullName = name.split('-');
+    let d = stylerInfo[0].description.split('.');
 
 
     useEffect(() => {
@@ -31,15 +31,24 @@ export default function Stylist() {
 
     return (
         <div>
+
             <div className="service-container">
-                <div className="styling">
-                    <img className="stylist-image" src={stylerInfo[0].image} />
+                <div id="stylist-container" className="styling">
+                    <img id="stylist-image" src={stylerInfo[0].image} />
                     <div>
                         <h1 style={{ margin: 0 }}>{stylerInfo[0].name} {stylerInfo[0].lastName}</h1>
                         <h5 style={{ margin: 0 }}>{stylerInfo[0].role}</h5>
-                        <p>{stylerInfo[0].description}</p>
+                        {d.map(textLine => {
+                            return (
+                                <p>{textLine + '.'}</p>
+
+                            )
+                        })}
+                        <div style={{ marginTop: '40px' }}><a id="insta-link_styler" href={stylerInfo[0].instagram} target="_blank"> VIEW INSTAGRAM PROFILE</a></div>
                     </div>
+
                 </div>
+
             </div>
             <Stylists />
         </div>

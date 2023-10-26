@@ -1,4 +1,3 @@
-
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,7 +10,7 @@ import 'swiper/css/pagination';
 
 export default function MembersCarousel() {
     const ourTeam = useSelector(ourTeamList)
-
+    let s = 'daw dawd wadwa da'
     return (
 
         <Swiper
@@ -22,10 +21,10 @@ export default function MembersCarousel() {
 
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}
-            // autoplay={{
-            //     delay: 4000,
-            //     disableOnInteraction: false
-            // }}
+            autoplay={{
+                delay: 4000,
+                disableOnInteraction: false
+            }}
             navigation
             breakpoints={{
                 0: {
@@ -55,11 +54,12 @@ export default function MembersCarousel() {
                             <div>
                                 <h3>{member.name} {member.lastName}</h3>
                                 <p>{member.role}</p>
-                                {/* <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDescription}</p> */}
-                                <Link onClick={() => {
+                                <p style={{ marginTop: 0 }}>{member.description.slice(0, 130)}... <Link onClick={() => {
                                     document.body.scrollTop = 0
                                     document.documentElement.scrollTop = 0
-                                }} to={'/stylists/' + member.name + '-' + member.lastName}>{'About ' + member.name}</Link>
+                                }} to={'/stylists/' + member.name + '-' + member.lastName}>{' More About ' + member.name}</Link></p>
+                                {/* <p style={{ fontFamily: "'karla','sans-serif'" }}>{member.smallDescription}</p> */}
+
                             </div>
                         </div>
                     </SwiperSlide>)

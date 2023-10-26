@@ -1,12 +1,21 @@
 .our-team-container {
     background-color: rgb(240, 240, 240);
-    margin-bottom: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     text-align: center;
+    padding-bottom: 20px;
+}
+
+
+.swiper-button-prev::after {
+    font-size: 20px;
+}
+
+.swiper-button-next::after {
+    font-size: 20px;
 }
 
 .our-team-container>p {
@@ -59,17 +68,19 @@
 
 
 
-.member-container>div>a {
+.member-container a {
     color: black;
     font-family: 'Karla', sans-serif;
     text-decoration: none;
-    border: 2px solid black;
     padding: 5px;
     font-size: 14px;
     margin-top: 10px;
     border-radius: 5px;
     width: 130px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
+
 
 .member-container>div>a:hover {
     background-color: black;
