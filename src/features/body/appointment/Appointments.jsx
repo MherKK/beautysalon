@@ -35,6 +35,7 @@ export default function Appointments() {
 
             </div>
 
+
             {display === 'Hair' ? <HairArtists hairStylers={hairStylers} /> :
                 <MakeUpArtists makeUpStlylers={makeUpStlylers} />}
         </div>

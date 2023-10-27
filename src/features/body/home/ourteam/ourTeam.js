@@ -12,7 +12,8 @@ export const ourTeam = [
         id: 1, name: 'Alex', lastName: 'Vazen', role: 'Hair Colorist',
         description: `Meet Alex, a young and talented hairstylist breaking barriers in the industry. Starting as an apprentice, he swiftly mastered the art of cutting and styling hair. Alex's unique touch lies in his innovative color techniques and trendsetting hairstyles. With a genuine connection to his clients, his chair becomes a place of trust and transformation. He's not just a hairstylist; he's a rising star in the world of beauty and self-confidence`,
         image: person1,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['dwa9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 2, name: 'Ellen', lastName: 'Girri', role: 'Make Up',
@@ -28,7 +29,8 @@ export const ourTeam = [
         id: 3, name: 'Ethan', lastName: 'Carlos', role: 'Hair Colorist',
         description: `Introducing Ethan, a budding hairstylist who is making waves in the beauty industry. From a humble start as an apprentice, he's quickly become known for his creative flair, introducing fresh color concepts and cutting-edge styles. Ethan's personable approach fosters strong client relationships, making his salon a hub for transformations and boosting self-esteem. He's not just a hairstylist; he's a rising star making his mark in the world of beauty and self-expression`,
         image: person2,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 4, name: 'Sarah', lastName: 'Mitchell', role: 'Hair Brusher',
@@ -44,13 +46,15 @@ despite the industry's challenges, Sarah's passion remains unwavering. Her salon
 
 Sarah Mitchell is a testament to the transformative power of a hairstylist—a calling and an art that leaves clients feeling their best`,
         image: person3,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 5, name: 'Jake', lastName: 'Ville', role: 'Hair Colorist',
         description: `Meet Jake, a budding hairstylist on the path to success. Starting as an apprentice, he's swiftly mastered the intricacies of haircuts and styling. What sets Jake apart is his artistic vision, blending colors and shapes to create unique, personalized looks. Clients value his attention to detail, and his chair is a place of both transformation and artistic expression. Jake is the future of hairstyling, combining skill and creativity in one remarkable package`,
         image: coloring,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 6, name: 'Emily', lastName: 'Gusto', role: 'Make Up',

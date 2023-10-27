@@ -7,11 +7,10 @@ import TimeTable from "./TimeTable/TimeTable";
 export default function HairArtists({ hairStylers }) {
 
     const [styler, setStyler] = useState([{}]);
-    let workingHours = ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+
     useEffect(() => {
         setStyler(hairStylers)
     }, [hairStylers])
-    console.log('f', styler);
     return (
         <div>
             <select onChange={(e) => {
@@ -20,6 +19,7 @@ export default function HairArtists({ hairStylers }) {
                     if (e.target.value === styler.name + ' ' + styler.lastName) {
                         return styler
                     }
+
 
                 }))
             }}>
@@ -31,7 +31,9 @@ export default function HairArtists({ hairStylers }) {
                     })
                 }
             </select>
-            <TimeTable styler={styler[0]} workingHours={workingHours} />
+
+            <TimeTable styler={styler[0]} />
+
         </div>
     )
 }
