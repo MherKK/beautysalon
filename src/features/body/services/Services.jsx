@@ -34,7 +34,6 @@ export default function Services() {
                 display === 'coloring' ? <HairColoringServices display={display} /> :
                     display === 'makeup' ? <MakeUpServices display={display} /> :
                         <TreatmentServices display={display} />}
-
         </div>
     )
 }

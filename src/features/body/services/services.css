@@ -31,6 +31,7 @@
     letter-spacing: 1px;
     font-family: 'karla';
     cursor: pointer;
+    color: black;
 }
 
 .services-button_container>button:nth-of-type(4) {
