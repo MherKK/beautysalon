@@ -12,7 +12,6 @@ export default function Services() {
 
 
     const [display, setDisplay] = useState('styling');
-    const [focus, setFocus] = useState();
     return (
         <div className="service-container">
             <h2>At Haze, we are dedicated to helping you achieve your best look. Share your desires with us, and we will make them a reality.</h2>

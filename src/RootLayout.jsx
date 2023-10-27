@@ -4,7 +4,10 @@ import Footer from "./features/footer/Footer";
 
 
 
+
 export default function RootLayout() {
+
+
     return (
         <div>
             <Header />
