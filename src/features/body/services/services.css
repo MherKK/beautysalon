@@ -16,6 +16,28 @@
     width: 100%;
 }
 
+.services-button_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.services-button_container>button {
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid black;
+    width: 120px;
+    letter-spacing: 1px;
+    font-family: 'karla';
+    cursor: pointer;
+}
+
+.services-button_container>button:nth-of-type(4) {
+    border: none;
+}
+
+
 .services-details {
     font-size: 18px;
     line-height: 1.4;
