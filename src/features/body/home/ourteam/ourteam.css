@@ -22,7 +22,7 @@
     font-size: 30px;
     font-weight: 500;
     font-family: 'Karla', sans-serif;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 .our-team-container>div {
@@ -81,6 +81,12 @@
     text-underline-offset: 2px;
 }
 
+.member-container>div>p:nth-of-type(2) {
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #555555;
+    font-family: 'Karla', sans-serif;
+}
 
 .member-container>div>a:hover {
     background-color: black;
