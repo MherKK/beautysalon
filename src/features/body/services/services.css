@@ -27,11 +27,11 @@
     background-color: transparent;
     border: none;
     border-right: 1px solid black;
-    width: 120px;
     letter-spacing: 1px;
     font-family: 'karla';
     cursor: pointer;
     color: black;
+    padding-inline: 12px;
 }
 
 .services-button_container>button:nth-of-type(4) {

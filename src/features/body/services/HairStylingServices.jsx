@@ -8,7 +8,7 @@ export default function HairStylingServices() {
 
             <div>
                 <div>
-                    <h5>Cut and Blowout <span style={{ fontSize: '12px' }}>4000 <span style={{ fontSize: '8px' }}> AMD</span></span></h5>
+                    <h5>Cut and Blowout <span style={{ fontSize: '12px', border: '1px solid black', padding: '3px' }}>4000 <span style={{ fontSize: '8px' }}> AMD</span></span></h5>
                     <p className="services-details">
                         Long, short, asymmetrical, or precision-straight, we love giving clients cuts that accentuate who they are and allow them to refine their personal style. All our haircuts come with a complimentary blowout and style so you will always leave the salon looking perfectly coiffed.
                     </p>

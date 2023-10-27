@@ -25,7 +25,7 @@ export default function Services() {
                     onClick={() => setDisplay('styling')}>Styling</button>
                 <button
                     style={display === 'makeup' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px' } : {}}
-                    onClick={() => setDisplay('makeup')}>Make Up</button>
+                    onClick={() => setDisplay('makeup')}>MakeUp</button>
                 <button
                     style={display === 'treatment' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px' } : {}}
                     onClick={() => setDisplay('treatment')}>Treatment</button>
