@@ -13,7 +13,7 @@ export default function TimeTable({ styler }) {
             <h4>{currDay.toDateString()}</h4>
             <div className="time-container">
                 {workingHours.map((time, index) => {
-                    return <Time key={index + styler.name} time={time} />
+                    return <Time key={index + Math.random()} time={time} />
                 })}
             </div>
         </div>

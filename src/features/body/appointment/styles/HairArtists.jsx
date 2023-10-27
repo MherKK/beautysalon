@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Time from "./TimeTable/Time";
 import TimeTable from "./TimeTable/TimeTable";
 
 
@@ -19,8 +18,6 @@ export default function HairArtists({ hairStylers }) {
                     if (e.target.value === styler.name + ' ' + styler.lastName) {
                         return styler
                     }
-
-
                 }))
             }}>
                 {
