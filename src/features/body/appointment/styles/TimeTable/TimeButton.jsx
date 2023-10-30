@@ -1,16 +1,27 @@
 import { useState } from "react";
+import { dataRef } from "../../../../../../firebase";
 
 
-export default function TimeButton({ time }) {
+export default function TimeButton({ time, index, stylerFullName }) {
 
-    const [book, setBook] = useState('none');
-    let admin = 'admin'
+    const [book, setBook] = useState(false);
+    let admin = 'admin';
+    console.log(stylerFullName);
     return (
-        <button onClick={() => {
-            if (admin === 'admin') {
-                setBook('block')
-            }
-        }}><span className="booked" style={{ display: book }}>booked</span>
-            {time}</button>
+        <div>
+            <button onClick={(e) => {
+                let updates = {
+                    time: time.time,
+                    isBooked: !time.isBooked
+                }
+                console.log(updates);
+                setBook(!book)
+                dataRef.ref('HairStylers/' + `${stylerFullName}/` + 'workingHours/' + index).update(updates)
+                if (admin === 'admin') {
+
+                }
+            }}>{time.isBooked === false ? time.time : "Booked"}</button>
+            {/* <span className="booked" style={time.isBooked === false ? { display: 'none' } : { display: 'block' }}>booked</span> */}
+        </div>
     )
 }

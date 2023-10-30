@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./appointment.css"
-import { useSelector } from "react-redux";
-import { ourTeamList } from "../home/ourteam/OurTeamSlice";
 import MakeUpArtists from "./styles/MakeUpArtists";
 import HairArtists from "./styles/HairArtists";
 
@@ -10,9 +8,7 @@ export default function Appointments() {
 
 
     const [display, setDisplay] = useState('Hair');
-    const ourTeam = useSelector(ourTeamList);
-    let hairStylers = ourTeam.filter(styler => !styler.role.search('Hair')) || [];
-    let makeUpStlylers = ourTeam.filter(styler => !styler.role.search('Make Up')) || [];
+
 
 
 
@@ -23,21 +19,24 @@ export default function Appointments() {
             <div className="services-button_container">
                 <button
                     style={display === 'MakeUp' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px', borderLeft: '1px solid black' } : {}}
-                    onClick={() => setDisplay('MakeUp')}
+                    onClick={(e) => {
+                        e.preventDefault()
+                        setDisplay('MakeUp')
+                    }}
                 >MakeUp
                 </button>
                 <button
                     style={display === 'Hair' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px' } : { border: 'none' }}
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         setDisplay('Hair')
                     }}
                 >Hair</button>
-
             </div>
 
 
-            {display === 'Hair' ? <HairArtists hairStylers={hairStylers} /> :
-                <MakeUpArtists makeUpStlylers={makeUpStlylers} />}
+            {display === 'Hair' ? <HairArtists /> :
+                <MakeUpArtists />}
         </div>
     );
 }

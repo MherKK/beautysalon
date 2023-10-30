@@ -1,35 +1,52 @@
 import { useEffect, useState } from "react";
 import TimeTable from "./TimeTable/TimeTable";
+import { dataRef } from "../../../../../firebase";
 
 
 
-export default function HairArtists({ hairStylers }) {
+export default function HairArtists() {
 
-    const [styler, setStyler] = useState([{}]);
+    const [styler, setStyler] = useState(
+        { workingHours: [] }
+    )
+    const [stylerName, setStylerName] = useState({
+        name: 'Alex',
+        fullName: 'AlexVazen'
+    });
+
+
+
+
+
 
     useEffect(() => {
-        setStyler(hairStylers)
-    }, [hairStylers])
+
+        dataRef.ref('HairStylers/' + stylerName.fullName).on('value', (data) => {
+            let objectData = (data.val())
+            setStyler(objectData)
+        })
+
+        // dataRef.ref('HairStylers/AlexVazen/workingHours').push(array)
+    }, [stylerName])
+
+
     return (
         <div>
-            <select onChange={(e) => {
-
-                setStyler(hairStylers.filter((styler) => {
-                    if (e.target.value === styler.name + ' ' + styler.lastName) {
-                        return styler
-                    }
-                }))
+            <select className="select-styler_appointment" onChange={(e) => {
+                let name = e.target.value;
+                let f = name.split(' ');
+                setStylerName({
+                    name: f[0],
+                    fullName: f.join('')
+                })
             }}>
-                {
-                    hairStylers.map(styler => {
-                        return (
-                            <option value={styler.name + ' ' + styler.lastName} key={styler.name}>{styler.name + ' ' + styler.lastName}</option>
-                        )
-                    })
-                }
+                <option value="Alex Vazen">Alex Vazen</option>
+                <option value="Ethan Carlos">Ethan Carlos</option>
+                <option value="Sarah Mitchell">Sarah Mitchell</option>
+                <option value="Jake Ville">Jake Ville</option>
             </select>
 
-            <TimeTable styler={styler[0]} />
+            <TimeTable styler={styler} stylerName={stylerName.name} stylerFullName={stylerName.fullName} />
 
         </div>
     )

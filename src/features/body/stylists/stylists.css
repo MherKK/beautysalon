@@ -49,12 +49,6 @@
     border: 2px solid rgb(142, 142, 142);
 }
 
-.stylists-container option {
-    width: 200px;
-    border-radius: 0px;
-    border: 1px solid red;
-}
-
 .stylists-container_members {
     display: flex;
     flex-wrap: wrap;

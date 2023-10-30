@@ -23,14 +23,15 @@ export const ourTeam = [
         
         Ellen is not just a makeup artist; she's a rising star in the beauty industry, transforming faces and boosting self-esteem, one brushstroke at a time`,
         image: person4,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['dwa9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 3, name: 'Ethan', lastName: 'Carlos', role: 'Hair Colorist',
         description: `Introducing Ethan, a budding hairstylist who is making waves in the beauty industry. From a humble start as an apprentice, he's quickly become known for his creative flair, introducing fresh color concepts and cutting-edge styles. Ethan's personable approach fosters strong client relationships, making his salon a hub for transformations and boosting self-esteem. He's not just a hairstylist; he's a rising star making his mark in the world of beauty and self-expression`,
         image: person2,
         instagram: 'https://www.instagram.com',
-        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+        workingHours: ['9:00', '10:00', '11:dawda00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 4, name: 'Sarah', lastName: 'Mitchell', role: 'Hair Brusher',
@@ -47,19 +48,20 @@ despite the industry's challenges, Sarah's passion remains unwavering. Her salon
 Sarah Mitchell is a testament to the transformative power of a hairstylist—a calling and an art that leaves clients feeling their best`,
         image: person3,
         instagram: 'https://www.instagram.com',
-        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:dawda00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 5, name: 'Jake', lastName: 'Ville', role: 'Hair Colorist',
         description: `Meet Jake, a budding hairstylist on the path to success. Starting as an apprentice, he's swiftly mastered the intricacies of haircuts and styling. What sets Jake apart is his artistic vision, blending colors and shapes to create unique, personalized looks. Clients value his attention to detail, and his chair is a place of both transformation and artistic expression. Jake is the future of hairstyling, combining skill and creativity in one remarkable package`,
         image: coloring,
         instagram: 'https://www.instagram.com',
-        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+        workingHours: ['9:00', '10:00', '11:00', '12:00', '13:daw00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
     {
         id: 6, name: 'Emily', lastName: 'Gusto', role: 'Make Up',
         description: `Allow me to introduce you to Emily, a young and talented makeup artist whose journey into the world of cosmetics began with a passion for self-expression. Starting as an apprentice, she honed her skills in makeup application and design. What makes Emily exceptional is her ability to bring out the unique beauty in each client, using colors and techniques that enhance natural features. Her warm, inviting demeanor creates an atmosphere of trust, where clients leave her chair not just looking fabulous but feeling confident and empowered. Emily isn't just a makeup artist; she's a rising star in the world of beauty, helping people find their most radiant selves through the art of makeup`,
         image: makeup,
-        instagram: 'https://www.instagram.com'
+        instagram: 'https://www.instagram.com',
+        workingHours: ['dwa9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
     },
 ]

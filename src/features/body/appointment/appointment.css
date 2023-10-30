@@ -13,12 +13,23 @@
     font-family: 'karla';
 }
 
+.select-styler_appointment {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    font-family: 'karla';
+    font-size: 16px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 1px;
+    background-color: white;
+}
+
 .calendar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
     padding: 10px;
     max-width: 800px;
     gap: 20px;
@@ -32,13 +43,10 @@
     font-size: 30px;
     font-family: 'karla';
     opacity: 0.8;
-    width: 100%;
-    text-align: center;
     border-bottom: 2px solid black;
 }
 
-.time>button {
-    position: relative;
+.time>div>button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,27 +60,16 @@
     height: 100%;
 }
 
-.notbooked {
-    display: none;
-}
 
-.booked {
-    position: absolute;
-    background-color: black;
-    color: red;
-    font-size: 20px;
-    width: 90%;
-}
 
-.time>button:hover {
+.time>div>button:hover {
     background-color: black;
     color: white;
 }
 
 .time {
     text-align: center;
-    border: 1px solid black;
-    width: 30%;
+    width: 40%;
 }
 
 .time-container {
@@ -82,4 +79,8 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 40px;
+}
+
+.services-button_container>button::selection {
+    background-color: red;
 }
