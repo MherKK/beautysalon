@@ -6,7 +6,6 @@ export default function TimeButton({ time, index, stylerFullName }) {
 
     const [book, setBook] = useState(false);
     let admin = 'admin';
-    console.log(stylerFullName);
     return (
         <div>
             <button onClick={(e) => {
@@ -14,7 +13,6 @@ export default function TimeButton({ time, index, stylerFullName }) {
                     time: time.time,
                     isBooked: !time.isBooked
                 }
-                console.log(updates);
                 setBook(!book)
                 dataRef.ref('HairStylers/' + `${stylerFullName}/` + 'workingHours/' + index).update(updates)
                 if (admin === 'admin') {

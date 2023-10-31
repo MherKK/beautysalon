@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./appointment.css"
 import MakeUpArtists from "./styles/MakeUpArtists";
 import HairArtists from "./styles/HairArtists";
+import { Route, Routes } from "react-router-dom";
 
 
 export default function Appointments() {
@@ -22,6 +23,7 @@ export default function Appointments() {
                     onClick={(e) => {
                         e.preventDefault()
                         setDisplay('MakeUp')
+
                     }}
                 >MakeUp
                 </button>

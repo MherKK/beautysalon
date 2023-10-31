@@ -15,7 +15,72 @@ export default function HairArtists() {
     });
 
 
-
+    let hairStylersWorkingData = {
+        "AlexVazen": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "EthanCarlos": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "SarahMitchell": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "JakeVille": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+    };
 
 
 
@@ -26,9 +91,9 @@ export default function HairArtists() {
             setStyler(objectData)
         })
 
-        // dataRef.ref('HairStylers/AlexVazen/workingHours').push(array)
+        //dataRef.ref('HairStylers/').set(data)
     }, [stylerName])
-
+    console.log(styler);
 
     return (
         <div>

@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Stylist from './features/body/stylists/Stylist'
 import Services from './features/body/services/Services.jsx'
 import Products from './features/body/products/Products.jsx'
@@ -8,6 +8,8 @@ import Home from './features/body/home/Home.jsx'
 import Stylists from './features/body/stylists/Stylists'
 import RootLayout from './RootLayout'
 import Appointments from './features/body/appointment/Appointments'
+import HairArtists from './features/body/appointment/styles/HairArtists'
+import MakeUpArtists from './features/body/appointment/styles/MakeUpArtists'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +20,10 @@ const router = createBrowserRouter(
       <Route path='/services' element={<Services />} />
       <Route path='/products' element={<Products />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/appointments' element={<Appointments />} />
+      <Route path='/appointments' element={<Appointments />}>
+        <Route path="hair" element={<HairArtists />} />
+        <Route path='appointments/MakeUpStylers/' element={<MakeUpArtists />} />
+      </Route>
     </Route>
   )
 )
