@@ -41,9 +41,9 @@ export default function Header() {
                 <ul className={showTab === false ? "desktop-tab-links" : "desktop-tab-links active"}>
                     <CustomLink to="/">Home</CustomLink>
                     <CustomLink to="/stylists">Stylists</CustomLink>
-                    <CustomLink to="/services">Services</CustomLink>
+                    <CustomLink to="/services/styling">Services</CustomLink>
                     <CustomLink to="/products">Products</CustomLink>
-                    <CustomLink to="/appointments">Appointments</CustomLink>
+                    <CustomLink to="/appointments/HairStylers">Appointments</CustomLink>
                     <CustomLink to='/contact'>Contact</CustomLink>
                 </ul>
             </div>
@@ -57,8 +57,9 @@ export default function Header() {
 
 
 function CustomLink({ to, children, props }) {
-    const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+    const resolvedPath = useResolvedPath(to).pathname;
+    console.log();
+    const isActive = useMatch({ path: resolvedPath, end: true });
     return (
         <li className={isActive ? 'active' : ""}>
             <Link to={to} onClick={() => {

@@ -1,5 +1,3 @@
-//import { useState } from "react";
-//import EditStylist from "./EditStylist";
 import { Link } from "react-router-dom";
 
 
@@ -27,40 +25,4 @@ export default function Styler({ member }) {
             </div>
         </div >
     )
-}
-
-
-//const [display, setDisplay] = useState(false);
-// const stylerInfo = {
-//     name: member.name,
-//     lastName: member.lastName,
-//     role: member.role,
-//     image: member.image,
-//     smallDescription: member.smallDescription,
-//     Description: member.Description
-// }
-// const [styler, setStyler] = useState(stylerInfo);
-
-
-{/* {user === 'admin' && window.location.pathname == '/stylists' &&
-                <button
-                    className="edit-button"
-                    onClick={(e) => {
-                        setDisplay(!display)
-                    }}
-                >Edit Styler
-                </button>
-            } */
-}
-
-{/* {display === true &&
-                <EditStylist
-                    display={display}
-                    setStyler={setStyler}
-                    styler={styler}
-                    team={team}
-                    setTeam={setTeam}
-                    setDisplay={setDisplay}
-                    member={member}
-                />} */
 }

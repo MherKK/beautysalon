@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import "./footer.css"
 import instaIcon from "../../assets/instaIcon.png"
 import fbIcon from "../../assets/face.png"
+import "./footer.css"
 
 export default function Footer() {
     return (
@@ -17,7 +17,10 @@ export default function Footer() {
                     <div >
                         <p><a href="tel:+37495158155">(+374) 042 142-123</a></p>
                         <p><a href="mailto:salon@gmail.com">salon@gmail.com</a></p>
-                        <Link to="/appointments">click here to check the appointments</Link>
+                        <Link to="/appointments/HairStylers" onClick={() => {
+                            document.body.scrollTop = 0
+                            document.documentElement.scrollTop = 0
+                        }}>click here to check the appointments</Link>
                     </div>
                 </div>
                 <div>
