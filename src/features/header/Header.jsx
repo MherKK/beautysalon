@@ -1,4 +1,5 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom"; import "./header.css"
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import "./header.css"
 import { useEffect, useRef, useState } from "react";
 import tab from "../../assets/tab-white.png"
 
@@ -58,10 +59,10 @@ export default function Header() {
 
 function CustomLink({ to, children, props }) {
     const resolvedPath = useResolvedPath(to).pathname;
-    console.log();
-    const isActive = useMatch({ path: resolvedPath, end: true });
+    let path = resolvedPath.split('/')[1];
+    const isActive = useMatch({ path: path, end: true });
     return (
-        <li className={isActive ? 'active' : ""}>
+        <li className={resolvedPath.split('/')[1] === location.pathname.split('/')[1] ? 'active' : ""}>
             <Link to={to} onClick={() => {
                 document.body.scrollTop = 0
                 document.documentElement.scrollTop = 0

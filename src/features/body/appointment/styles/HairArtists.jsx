@@ -93,7 +93,7 @@ export default function HairArtists() {
 
         //dataRef.ref('HairStylers/').set(data)
     }, [stylerName])
-    console.log(styler);
+
 
     return (
         <div>

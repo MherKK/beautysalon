@@ -5,7 +5,7 @@ import { Link, Outlet } from "react-router-dom";
 
 export default function Appointments() {
 
-    const [click, setClick] = useState(location.pathname.split('/')[2])
+    const [active, setActive] = useState(location.pathname.split('/')[2])
 
     return (
         <div className="appointment-container">
@@ -14,14 +14,14 @@ export default function Appointments() {
             <div className="services-button_container">
                 <Link
                     to="/appointments/MakeUpStylers"
-                    style={click === 'MakeUpStylers' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px' } : {}}
-                    onClick={() => setClick('MakeUpStylers')}
+                    className={active == 'MakeUpStylers' ? 'active' : ""}
+                    onClick={() => setActive('MakeUpStylers')}
                 >MakeUp
                 </Link>
                 <Link
                     to="/appointments/HairStylers"
-                    style={click === 'HairStylers' ? { fontWeight: '800', textDecoration: 'underline', textUnderlineOffset: '8px' } : {}}
-                    onClick={() => setClick('HairStylers')}
+                    className={active == 'HairStylers' ? 'active' : ""}
+                    onClick={() => setActive('HairStylers')}
                 >Hair</Link>
             </div>
 

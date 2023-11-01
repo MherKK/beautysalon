@@ -35,6 +35,14 @@
     text-decoration: none;
 }
 
+a.active {
+    font-weight: 800;
+    text-underline-offset: 8px;
+    text-decoration: underline;
+}
+
+
+
 
 .services-button_container>a:nth-of-type(4) {
     border: none;

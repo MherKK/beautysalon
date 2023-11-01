@@ -60,6 +60,13 @@
     height: 100%;
 }
 
+a.active {
+    font-weight: 800;
+    text-underline-offset: 8px;
+    text-decoration: underline;
+}
+
+
 
 
 .time>div>button:hover {
