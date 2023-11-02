@@ -5,6 +5,7 @@
     align-items: center;
     padding: 20px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .appointment-container h2 {
@@ -66,8 +67,22 @@ a.active {
     text-decoration: underline;
 }
 
+.appointment-days {
+    display: flex;
+    justify-content: center;
+    font-family: 'karla';
+    font-size: 20px;
+}
 
-
+.appointment-days>a {
+    width: 65px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid black;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+}
 
 .time>div>button:hover {
     background-color: black;
@@ -88,6 +103,13 @@ a.active {
     margin-bottom: 40px;
 }
 
-.services-button_container>button::selection {
-    background-color: red;
+
+@media (max-width: 470px) {
+    .appointment-days>a {
+        width: 40px;
+    }
+
+    .appointment-days {
+        font-size: 16px;
+    }
 }

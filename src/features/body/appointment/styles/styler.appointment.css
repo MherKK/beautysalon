@@ -1,0 +1,56 @@
+.stylers-appointment_container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.styler-appointment_container {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    font-family: 'karla';
+    letter-spacing: 1px;
+    border-radius: 8px;
+    margin: 0;
+    gap: 5px;
+}
+
+.styler-appointment_container img {
+    width: 130px;
+    height: 130px;
+    border-radius: 8px;
+}
+
+.styler-appointment_container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+.styler-appointment_container>div h3 {
+    font-size: 24px;
+}
+
+
+
+.styler-appointment_container>div h3,
+h5,
+a {
+    margin: 0;
+    color: black;
+}
+
+@media (min-width:500px) {
+    .styler-appointment_container {
+        width: 400px;
+    }
+}
+
+
+@media (min-width:1000px) {
+    .styler-appointment_container {
+        width: 600px;
+    }
+}
