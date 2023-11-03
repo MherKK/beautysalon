@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { dataRef } from "../../../../../../firebase";
-import { useState } from "react";
+
 
 
 export default function TimeButton({ time, index, stylerFullName }) {
@@ -9,25 +9,19 @@ export default function TimeButton({ time, index, stylerFullName }) {
     let { day } = useParams();
     let admin = 'admin';
 
-    let updates = {
-        time: time.time,
-        isBooked: false
-    }
-    const [booked, setBooked] = useState(updates);
+
+    // const [booked, setBooked] = useState(updates);
 
     return (
         <div>
             <button onClick={(e) => {
+                let updates = {
+                    time: time.time,
+                    isBooked: !time.isBooked
+                }
 
-                setBooked(
-                    {
-                        time: time.time,
-                        isBooked: true
-                    }
-                )
-                console.log(time.isBooked);
                 if (admin === 'admin') {
-                    dataRef.ref(`${path}/` + `${stylerFullName}/` + `${day}/` + 'workingHours/' + index).update(booked)
+                    dataRef.ref(`${path}/` + `${stylerFullName}/` + `${day}/` + 'workingHours/' + index).update(updates)
                 }
             }}>{time.isBooked === false ? time.time : "Booked"}</button>
 

@@ -14,22 +14,25 @@ export default function ArtistAppointment() {
     let { day } = useParams();
     const [styler, setStyler] = useState(
         {
-            'Mon': {
-                workingHours: []
-            }
+            workingHours: []
         }
     )
 
+    let arrayOfDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    let d = new Date();
+    let year = d.getFullYear();
+    let month = d.getMonth() + 1;
+    let daya = d.getDate();
 
     useEffect(() => {
 
-        dataRef.ref(path + '/' + name).on('value', (data) => {
+        dataRef.ref(path + '/' + name + '/' + day).on('value', (data) => {
             let objectData = (data.val())
             setStyler(objectData)
         })
 
         //dataRef.ref('HairStylers/').set(data)
-    }, [name])
+    }, [day])
 
 
     let makeUpStylersWorkingData = {
@@ -148,20 +151,118 @@ export default function ArtistAppointment() {
             }
         },
         "EmilyGusto": {
-            workingHours: [
-                { time: '9:00', isBooked: false },
-                { time: '10:00', isBooked: false },
-                { time: '11:00', isBooked: false },
-                { time: '12:00', isBooked: false },
-                { time: '13:00', isBooked: false },
-                { time: '14:00', isBooked: false },
-                { time: '15:00', isBooked: false },
-                { time: '16:00', isBooked: false },
-                { time: '17:00', isBooked: false },
-                { time: '18:00', isBooked: false },
-                { time: '19:00', isBooked: false },
-                { time: '20:00', isBooked: false },
-            ]
+            "Mon": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Tue": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Wed": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Thu": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Fri": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Sat": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            },
+            "Sun": {
+                workingHours: [
+                    { time: '9:00', isBooked: false },
+                    { time: '10:00', isBooked: false },
+                    { time: '11:00', isBooked: false },
+                    { time: '12:00', isBooked: false },
+                    { time: '13:00', isBooked: false },
+                    { time: '14:00', isBooked: false },
+                    { time: '15:00', isBooked: false },
+                    { time: '16:00', isBooked: false },
+                    { time: '17:00', isBooked: false },
+                    { time: '18:00', isBooked: false },
+                    { time: '19:00', isBooked: false },
+                    { time: '20:00', isBooked: false },
+                ]
+            }
         }
     };
 
@@ -172,12 +273,8 @@ export default function ArtistAppointment() {
     // }, [])
 
 
-    let arrayOfDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    let d = new Date();
-    let year = d.getFullYear();
-    let month = d.getMonth() + 1;
-    let daya = d.getDate();
-    console.log(day);
+
+
     return (
         <div>
 
@@ -187,13 +284,13 @@ export default function ArtistAppointment() {
 
                 let date = new Date(`${year}-${month}-${daya + i}`);
                 let currentDate = date.toDateString().split(' ')[0];
-                console.log(days);
+
                 return <Link
                     style={day === currentDate ? { fontWeight: '800', textDecoration: "underline", textUnderlineOffset: '5px' } : {}}
                     to={'/appointments/' + `${path}/` + name + '/' + currentDate} key={i} >{currentDate}</Link>
             })}
             </div>
-            <TimeTable styler={styler.Mon} stylerFullName={name} />
+            <TimeTable styler={styler} stylerFullName={name} />
 
         </div>
     )

@@ -14,7 +14,135 @@ export default function HairArtists() {
         let role = i.role;
         return role.slice(0, 4) === 'Hair'
     })
-    let currentDate = date.toDateString().split(' ')[0]
+    let currentDate = new Date().toDateString().split(' ')[0]
+
+    let weekWorkingHoursObject =
+    {
+        "Mon": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Tue": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Wed": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Thu": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Fri": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Sat": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        },
+        "Sun": {
+            workingHours: [
+                { time: '9:00', isBooked: false },
+                { time: '10:00', isBooked: false },
+                { time: '11:00', isBooked: false },
+                { time: '12:00', isBooked: false },
+                { time: '13:00', isBooked: false },
+                { time: '14:00', isBooked: false },
+                { time: '15:00', isBooked: false },
+                { time: '16:00', isBooked: false },
+                { time: '17:00', isBooked: false },
+                { time: '18:00', isBooked: false },
+                { time: '19:00', isBooked: false },
+                { time: '20:00', isBooked: false },
+            ]
+        }
+    }
+
+
+    let hairStylersWorkingData = {
+        "AlexVazen": weekWorkingHoursObject,
+        "EthanCarlos": weekWorkingHoursObject,
+        "SarahMitchell": weekWorkingHoursObject,
+        "JakeVille": weekWorkingHoursObject
+    };
+
+    // useEffect(() => {
+    //     dataRef.ref('HairStylers/').set(hairStylersWorkingData)
+    // }, [])
 
 
     return (
@@ -28,7 +156,7 @@ export default function HairArtists() {
                         <div>
                             <h3>{styler.name + " " + styler.lastName}</h3>
                             <h5>{styler.role}</h5>
-                            <Link to={'/appointments/HairStylers/' + styler.name + styler.lastName + currentDate}>{styler.name}'s appointments</Link>
+                            <Link to={'/appointments/HairStylers/' + styler.name + styler.lastName + '/' + currentDate}>{styler.name}'s appointments</Link>
                         </div>
                     </div>
                 )
@@ -53,72 +181,6 @@ export default function HairArtists() {
 // });
 
 
-// let hairStylersWorkingData = {
-//     "AlexVazen": {
-//         workingHours: [
-//             { time: '9:00', isBooked: false },
-//             { time: '10:00', isBooked: false },
-//             { time: '11:00', isBooked: false },
-//             { time: '12:00', isBooked: false },
-//             { time: '13:00', isBooked: false },
-//             { time: '14:00', isBooked: false },
-//             { time: '15:00', isBooked: false },
-//             { time: '16:00', isBooked: false },
-//             { time: '17:00', isBooked: false },
-//             { time: '18:00', isBooked: false },
-//             { time: '19:00', isBooked: false },
-//             { time: '20:00', isBooked: false },
-//         ]
-//     },
-//     "EthanCarlos": {
-//         workingHours: [
-//             { time: '9:00', isBooked: false },
-//             { time: '10:00', isBooked: false },
-//             { time: '11:00', isBooked: false },
-//             { time: '12:00', isBooked: false },
-//             { time: '13:00', isBooked: false },
-//             { time: '14:00', isBooked: false },
-//             { time: '15:00', isBooked: false },
-//             { time: '16:00', isBooked: false },
-//             { time: '17:00', isBooked: false },
-//             { time: '18:00', isBooked: false },
-//             { time: '19:00', isBooked: false },
-//             { time: '20:00', isBooked: false },
-//         ]
-//     },
-//     "SarahMitchell": {
-//         workingHours: [
-//             { time: '9:00', isBooked: false },
-//             { time: '10:00', isBooked: false },
-//             { time: '11:00', isBooked: false },
-//             { time: '12:00', isBooked: false },
-//             { time: '13:00', isBooked: false },
-//             { time: '14:00', isBooked: false },
-//             { time: '15:00', isBooked: false },
-//             { time: '16:00', isBooked: false },
-//             { time: '17:00', isBooked: false },
-//             { time: '18:00', isBooked: false },
-//             { time: '19:00', isBooked: false },
-//             { time: '20:00', isBooked: false },
-//         ]
-//     },
-//     "JakeVille": {
-//         workingHours: [
-//             { time: '9:00', isBooked: false },
-//             { time: '10:00', isBooked: false },
-//             { time: '11:00', isBooked: false },
-//             { time: '12:00', isBooked: false },
-//             { time: '13:00', isBooked: false },
-//             { time: '14:00', isBooked: false },
-//             { time: '15:00', isBooked: false },
-//             { time: '16:00', isBooked: false },
-//             { time: '17:00', isBooked: false },
-//             { time: '18:00', isBooked: false },
-//             { time: '19:00', isBooked: false },
-//             { time: '20:00', isBooked: false },
-//         ]
-//     },
-// };
 
 
 
