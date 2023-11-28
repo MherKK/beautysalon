@@ -23,7 +23,7 @@ export default function ArtistAppointment() {
     let year = d.getFullYear();
     let month = d.getMonth() + 1;
     let daya = d.getDate();
-
+ 
     useEffect(() => {
 
         dataRef.ref(path + '/' + name + '/' + day).on('value', (data) => {
@@ -284,10 +284,10 @@ export default function ArtistAppointment() {
 
                 let date = new Date(`${year}-${month}-${daya + i}`);
                 let currentDate = date.toDateString().split(' ')[0];
-
-                return <Link
-                    style={day === currentDate ? { fontWeight: '800', textDecoration: "underline", textUnderlineOffset: '5px' } : {}}
-                    to={'/appointments/' + `${path}/` + name + '/' + currentDate} key={i} >{currentDate}</Link>
+                console.log(date);
+                return currentDate === 'Invalid' ? '' : <Link
+                style={day === currentDate ? { fontWeight: '800', textDecoration: "underline", textUnderlineOffset: '5px' } : {}}
+                to={'/appointments/' + `${path}/` + name + '/' + currentDate} key={i} >{currentDate}</Link>
             })}
             </div>
             <TimeTable styler={styler} stylerFullName={name} />

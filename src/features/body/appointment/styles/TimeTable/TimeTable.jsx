@@ -18,7 +18,6 @@ export default function TimeTable({ styler, stylerFullName }) {
     })
 
     let chosenDay = thisWeek.filter(i => i.split(' ')[0] === day);
-    console.log(chosenDay);
     return (
         <div className="calendar">
 
